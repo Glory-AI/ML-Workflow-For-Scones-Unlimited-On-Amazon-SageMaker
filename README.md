@@ -3,6 +3,7 @@
 
 ### Project overview
 This repository contains an end-to-end machine learning pipeline that trains, deploys, and serves an image classification model which distinguishes bicycles from motorcycles. The solution demonstrates model training with SageMaker, serverless inference using AWS Lambda, and orchestration using AWS Step Functions. The pipeline includes data capture, inference monitoring, and post-processing.
+It focuses on building an image classification model that can automatically detect which kind of vehicle delivery drivers have, in order to route them to the correct loading bay and orders. Assigning delivery professionals who have a bicycle to nearby orders and giving motorcyclists orders that are farther can help Scones Unlimited optimize their operations.
  
 
 ### Architecture
@@ -34,6 +35,8 @@ This repository contains an end-to-end machine learning pipeline that trains, de
 * Data capture from SageMaker endpoints into S3 for offline analysis and model monitoring.
 
 * Scripts and notebooks to download and parse captured data and to analyze inference outputs.
+  
+<img width="1366" height="768" alt="Screenshot 2025-10-04 001552" src="https://github.com/user-attachments/assets/83e7c868-b61b-4c26-b793-592684bca46f" />
 
 
 ### Key concepts & data notes
@@ -61,7 +64,7 @@ This repository contains an end-to-end machine learning pipeline that trains, de
 
 * Fix: json.loads(...) where necessary; read .jsonl line by line using jsonlines.
 
-####* SageMaker ModuleNotFoundError on endpoint/unpickle errors
+#### * SageMaker ModuleNotFoundError on endpoint/unpickle errors
 
 * Cause: model pickled/saved with different library versions than endpoint environment.
 
